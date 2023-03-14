@@ -1,23 +1,41 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import { useLogout } from './hooks/useLogout';
+
+//pages
+import Home from './pages/Home';
+import Signup from './pages/Signup';
+import Login from './pages/Login';
+import Charity from './pages/Charity';
+import Tutorial from './components/Tutorial';
+
+
 
 function App() {
+
+  const { logout } = useLogout()
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+      <nav>
+          <h1>Fana Router</h1>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/signup">Signup</Link></li>
+          <li><Link to="/login">Login</Link></li>
+          <li><Link to="/charity">Charity</Link></li>
+          <li><Link to="/tutorial">Tutorial</Link></li>
+          <li onClick={() => logout()} >Logout</li>
+
+        </nav>
+        <Routes>
+          <Route exact path='/' element={<Home/>}/>
+          <Route path='/signup' element={<Signup/>}/>
+          <Route path='/login' element={<Login/>}/>
+          <Route path='/charity' element={<Charity/>}/>
+          <Route path='/tutorial' element={<Tutorial/>}/>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
