@@ -1,3 +1,8 @@
-body {
-    background: radial-gradient(#3A2861, #1E0E40, #180B33);
+.home h1, .home p {
+    color: #160C28;
+}
+
+.home {
+    background-color: white;
+    height: 100vh;
 }

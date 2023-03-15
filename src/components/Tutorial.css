@@ -7,7 +7,7 @@
     height: 100%;
   }
   
-  body {
+.mySwiper body {
     background: #eee;
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 14px;
@@ -16,8 +16,9 @@
     padding: 0;
   }
 
-  body p {
+.mySwiper p, h1 {
     font-weight: Light;
+    color: white;
   }
   
   .swiper {
@@ -30,7 +31,6 @@
     font-size: 18px;
     background: radial-gradient(#3A2861, #1E0E40, #180B33);
     
-  
     /* Center slide text vertically */
     display: flex;
     justify-content: center;
@@ -53,4 +53,13 @@
     }
   }
   
-  
+  .btn {
+    text-decoration: none;
+    background-color: #B8ACD3;
+    border-radius: 15px;
+    color: #1E0E40;
+    font-weight: bold;
+    padding: 1em;
+    width: 100%;
+    max-width: 100px; /* or any other suitable value */
+  }
