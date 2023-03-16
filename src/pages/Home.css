@@ -7,6 +7,14 @@
     height: 100vh;
 }
 
+.selector-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
 .selector {
     display: flex;
     justify-content: center; /* add this to center the items horizontally */
@@ -22,10 +30,21 @@
     position: relative;
   }
   
-  .feed h1 {
+.feed h1 {
     position: absolute;
     color: white;
     top: 0;
     left: 50%;
+  }
+
+  .feed-item {
+    display: flex;
+  }
+  
+  .feed-item div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1; /* add this to make the div fill the remaining space */
   }
   
