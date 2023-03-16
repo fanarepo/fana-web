@@ -10,10 +10,13 @@ import homeEnvironmentIcon from '../assets/homeEnvironmentIcon.png'
 import homePeopleIcon from '../assets/homePeopleIcon.png'
 import homeEducationIcon from '../assets/homeEducationIcon.png'
 import homeFeaturedIcon from '../assets/homeFeaturedIcon.png'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import bannerTusk from '../assets/bannerTusk.png'
+import testIcon from '../assets/testIcon.png' //remove this one lateron
 
-
+//firebase data fetching
+import { db } from '../firebase/config';
+import { collection, getDoc, getDocs } from 'firebase/firestore';
 
 const header = {
   class1: {
@@ -46,10 +49,25 @@ const header = {
 
 export default function Home() {
 
+  const [charities, setCharities] = useState(null)
+
+  useEffect(() => {
+    const ref = collection(db, 'fana')
+
+    getDocs(ref)
+      .then((snapshot) => {
+        let results = []
+        snapshot.docs.forEach(doc => {
+          results.push({id: doc.id, ...doc.data()})
+        })
+        setCharities(results)
+      })
+  },[])
+
   const [selection, setSelection] = useState('class1')
 
-
   console.log(selection)
+  console.log(charities)
 
   return (
     <div className='home'>
@@ -58,6 +76,7 @@ export default function Home() {
     <h1>{header[selection].title}</h1>
     <p>{header[selection].content}</p>
     
+    <div className='selector-container'>
     <div className='selector'>
       <div>
         <img src={homeAnimalsIcon} 
@@ -92,8 +111,24 @@ export default function Home() {
     </div>
 
     <div className='feed'> 
-      <img src={bannerTusk} />
-      <h1>Tusk</h1>
+      <ul>
+        <li className='feed-item'>
+          <img src={testIcon}/>
+            <div>
+            <h3>{charities && charities[0].charityName}</h3>
+            <p>{charities && charities[0].charitySubtitle}</p>
+            </div>
+        </li>
+        <li className='feed-item'>
+          <img src={testIcon}/>
+            <div>
+            <h3>{charities && charities[1].charityName}</h3>
+            <p>{charities && charities[1].charitySubtitle}</p>
+            </div>
+        </li>
+      </ul>
+    </div>
+    
     </div>
 
     </div>
