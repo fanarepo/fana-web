@@ -6,3 +6,26 @@
     background-color: white;
     height: 100vh;
 }
+
+.selector {
+    display: flex;
+    justify-content: center; /* add this to center the items horizontally */
+    margin-top: 20px; /* add this to create some space between the selector and the content above */
+  }
+  
+
+.selector img {
+    margin-bottom: -22px;
+}
+
+.feed {
+    position: relative;
+  }
+  
+  .feed h1 {
+    position: absolute;
+    color: white;
+    top: 0;
+    left: 50%;
+  }
+  
