@@ -13,6 +13,8 @@ import homeFeaturedIcon from '../assets/homeFeaturedIcon.png'
 import { useEffect, useState } from 'react';
 import bannerTusk from '../assets/bannerTusk.png'
 import testIcon from '../assets/testIcon.png' //remove this one lateron
+import testIcon2 from '../assets/testIcon2.png' //remove this one lateron
+import { SlArrowRight } from 'react-icons/sl'
 
 //firebase data fetching
 import { db } from '../firebase/config';
@@ -118,13 +120,15 @@ export default function Home() {
             <h3>{charities && charities[0].charityName}</h3>
             <p>{charities && charities[0].charitySubtitle}</p>
             </div>
+            <SlArrowRight />
         </li>
         <li className='feed-item'>
-          <img src={testIcon}/>
+          <img src={testIcon2}/>
             <div>
             <h3>{charities && charities[1].charityName}</h3>
             <p>{charities && charities[1].charitySubtitle}</p>
             </div>
+            <SlArrowRight />
         </li>
       </ul>
     </div>

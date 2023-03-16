@@ -39,12 +39,21 @@
 
   .feed-item {
     display: flex;
+    align-items: center;
   }
   
   .feed-item div {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    flex-grow: 1; /* add this to make the div fill the remaining space */
+    flex-grow: 1;
   }
+  
+
+  .feed-item img {
+    height: 100%;
+
+  }
+
+
   
