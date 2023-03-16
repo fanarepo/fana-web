@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fana-web-app
+  labels:
+    app: fana-web-app
+spec:
+  selector:
+    matchLabels:
+      app: fana-web-app
+  template:
+    metadata:
+      labels:
+        app: fana-web-app
+    spec:
+      containers:
+        - name: fana-web-app
+          image: deccr.ccs.tencentyun.com/myfana2022/fana-web-app:0
+          ports:
+            - containerPort: 80
