@@ -21,7 +21,14 @@
     color: white;
   }
   
-  .swiper {
+.start {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper {
     width: 100%;
     height: 100%;
   }
@@ -30,7 +37,7 @@
     text-align: center;
     font-size: 18px;
     background: radial-gradient(#3A2861, #1E0E40, #180B33);
-    
+    min-height: 100vh;
     /* Center slide text vertically */
     display: flex;
     justify-content: center;
