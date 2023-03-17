@@ -9,6 +9,7 @@ import navbarBrands from '../assets/navbarBrands.png'
 import navbarWallet from '../assets/navbarWallet.png'
 import navbarAccount from '../assets/navbarAccount.png'
 
+
 export default function Navbar() {
     const { logout } = useLogout()
     const { user } = useAuthContext()
