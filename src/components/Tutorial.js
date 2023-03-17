@@ -40,10 +40,12 @@ export default function Tutorial() {
         </SwiperSlide>
         <SwiperSlide>
           <h1>Let's get you started</h1>
+          <div className='start'>
           <p>Sign up to start your journey:</p>
           <Link to="/signup" className='btn'>Signup</Link>
           <p>Login if you are already a member:</p>
           <Link to="/login" className='btn'>Login</Link>
+          </div>
         </SwiperSlide>
         </Swiper>
     </>

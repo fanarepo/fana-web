@@ -8,7 +8,7 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Charity from './pages/Charity';
 import Tutorial from './components/Tutorial';
-
+import Brands from './pages/Brands';
 
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
           <Route path='/tutorial' element={<Tutorial/>}/>
           <Route path='/impact' element={<Login/>}/>
           <Route path='/wallet' element={<Login/>}/>
-          <Route path='/brands' element={<Login/>}/>
+          <Route path='/brands' element={<Brands/>}/>
         </Routes>
       </BrowserRouter>
     </div>

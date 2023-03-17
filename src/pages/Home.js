@@ -72,8 +72,10 @@ export default function Home() {
   console.log(charities)
 
   return (
+    <div>
+    <Navbar/>
     <div className='home'>
-     <Navbar/>
+     
     <img src={header[selection].banner} />
     <h1>{header[selection].title}</h1>
     <p>{header[selection].content}</p>
@@ -135,6 +137,7 @@ export default function Home() {
     
     </div>
 
+    </div>
     </div>
   );
 }
