@@ -9,6 +9,7 @@ import navbarBrands from '../assets/navbarBrands.png'
 import navbarWallet from '../assets/navbarWallet.png'
 import navbarAccount from '../assets/navbarAccount.png'
 
+
 export default function Navbar() {
     const { logout } = useLogout()
     const { user } = useAuthContext()
@@ -18,7 +19,7 @@ export default function Navbar() {
       
       <ul>
         <li><img src={navbarCharities}/><Link to="/">Home</Link></li>
-        <li><img src={navbarImpact}/><Link to="/impact">Impact</Link></li>
+        <li><img src={navbarImpact}/><Link to="/tutorial">Impact</Link></li>
         <li><img src={navbarBrands}/><Link to="/brands">Brands</Link></li>
         <li><img src={navbarWallet}/><Link to="/wallet">Wallet</Link></li>
         {!user && <li><img src={navbarAccount}/><Link to="/login">Login</Link></li>}
