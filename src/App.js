@@ -1,6 +1,8 @@
 import './App.css';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import { useLogout } from './hooks/useLogout';
+import { useAuthContext } from './hooks/useAuthContext';
+import { Navigate } from 'react-router-dom';
 
 //pages
 import Home from './pages/Home';
@@ -9,19 +11,21 @@ import Login from './pages/Login';
 import Charity from './pages/Charity';
 import Tutorial from './components/Tutorial';
 import Brands from './pages/Brands';
+import { isCompositeComponent } from 'react-dom/test-utils';
 
 
 function App() {
-
+  const { user, authIsReady } = useAuthContext()
 
 
   return (
     <div className="App">
+      {authIsReady && (
       <BrowserRouter>
         <Routes>
-          <Route exact path='/' element={<Home/>}/>
-          <Route path='/signup' element={<Signup/>}/>
-          <Route path='/login' element={<Login/>}/>
+          <Route exact path='/' element={user ? <Home/> : <Navigate to="/tutorial" replace />}/>
+          <Route path='/signup' element={user ? <Home/> : <Signup/>}/>
+          <Route path='/login' element={user ? <Home/> : <Login/>}/>
           <Route path='/charity' element={<Charity/>}/>
           <Route path='/tutorial' element={<Tutorial/>}/>
           <Route path='/impact' element={<Login/>}/>
@@ -29,6 +33,7 @@ function App() {
           <Route path='/brands' element={<Brands/>}/>
         </Routes>
       </BrowserRouter>
+      )}
     </div>
   );
 }
