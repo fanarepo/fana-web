@@ -1,57 +1,61 @@
+.signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers horizontally */
+  justify-content: center; /* centers vertically */
+  height: 100vh; /* use full viewport height */
+  background: radial-gradient(#3A2861, #1E0E40, #180B33);
+}
+
+
+.signup h1, .signup p {
+  color: white;
+}
+
+
 .signup-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; /* Add this */
-    margin: 15px;
-    height: 100%; /* Add this */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* remove height and add this */
+  margin: 15px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.signup-form input {
+  height: 2em;
+  margin: 10px;
+}
+
+.logo {
+  height: 6em;
+  margin-bottom: 2em;
+}
+
+.signup-btn {
+  background-color: #B8ACD3;
+  border-radius: 15px;
+  color: #1E0E40;
+  font-weight: bold;
+  padding: 1em;
+  max-width: 100px;
+  width: 100%;
+  margin: 10px;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    height: 4em;
+    margin-bottom: 1em;
   }
-  
   
   .signup-form input {
+    height: 2em;
     margin: 10px;
-    height: 2.5em;
-    width: 100%;
-    max-width: 400px; /* or any other suitable value */
-  }
-  
-  .logo {
-    height: 6em;
-    margin-bottom: 2em;
   }
   
   .signup-btn {
-    background-color: #B8ACD3;
-    border-radius: 15px;
-    color: #1E0E40;
-    font-weight: bold;
-    padding: 1em;
-    width: 100%;
-    max-width: 100px; /* or any other suitable value */
+    font-size: 0.8em;
   }
-  
-  @media (max-width: 768px) {
-    .logo {
-      height: 4em;
-      margin-bottom: 1em;
-    }
-    
-    .signup-form input {
-      height: 2em;
-    }
-    
-    .signup-btn {
-      font-size: 0.8em;
-    }
-  }
-  
-
-body {
-    background: radial-gradient(#3A2861, #1E0E40, #180B33);
-}
-
-.link {
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
 }
